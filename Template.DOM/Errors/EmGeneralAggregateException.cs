@@ -2,30 +2,30 @@ using System.Runtime.Serialization;
 
 namespace Template.DOM.Errors;
 
-public class EmGeneralAggregateException : AggregateException
+public class EMGeneralAggregateException : AggregateException
 {
-    public EmGeneralAggregateException(EmGeneralException exception)
+    public EMGeneralAggregateException(EMGeneralException exception)
         : base((Exception) exception)
     {
     }
 
-    public EmGeneralAggregateException(List<EmGeneralException> exceptions)
+    public EMGeneralAggregateException(List<EMGeneralException> exceptions)
         : base((IEnumerable<Exception>) exceptions)
     {
     }
 
-    protected EmGeneralAggregateException(SerializationInfo info, StreamingContext context)
+    protected EMGeneralAggregateException(SerializationInfo info, StreamingContext context)
         : base(info, context)
     {
     }
 
-    public EmGeneralException? InnerException => (EmGeneralException) base.InnerException;
+    public EMGeneralException? InnerException => (EMGeneralException) base.InnerException;
 
-    public List<EmGeneralException>? InnerExceptions
+    public List<EMGeneralException>? InnerExceptions
     {
         get
         {
-            return base.InnerExceptions.Select<Exception, EmGeneralException>((Func<Exception, EmGeneralException>) (innerException => (EmGeneralException) innerException)).ToList<EmGeneralException>();
+            return base.InnerExceptions.Select<Exception, EMGeneralException>((Func<Exception, EMGeneralException>) (innerException => (EMGeneralException) innerException)).ToList<EMGeneralException>();
         }
     }
 }
