@@ -3,6 +3,7 @@ using System.Text;
 using Newtonsoft.Json;
 using Template.RestAPI.Models;
 using Template.UnitTest.FixtureBase;
+using InlineResponse400 = Template.RestAPI.Models.InlineResponse400;
 
 namespace Template.UnitTest.IntegrationTest;
 

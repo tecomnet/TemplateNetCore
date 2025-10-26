@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using Template.DOM.Errors;
 using Template.RestAPI.Models;
+using InlineResponse400 = Template.RestAPI.Models.InlineResponse400;
 
 namespace Template.RestAPI.Controllers.Implementation
 {
@@ -28,7 +29,7 @@ namespace Template.RestAPI.Controllers.Implementation
             }
 
             var exception = context.Error;
-            var emGeneralAggregateException = new EmGeneralAggregateException(new EmGeneralException(exception.Message, exception));
+            var emGeneralAggregateException = new EMGeneralAggregateException(new EMGeneralException(exception.Message, exception));
             return BadRequest(new InlineResponse400(emGeneralAggregateException));
         }
     }

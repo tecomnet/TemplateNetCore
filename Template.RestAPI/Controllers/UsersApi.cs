@@ -15,6 +15,7 @@ using Swashbuckle.AspNetCore.Annotations;
 using Template.RestAPI.Attributes;
 using Template.RestAPI.Controllers.Base;
 using Template.RestAPI.Models;
+using InlineResponse400 = Template.RestAPI.Models.InlineResponse400;
 
 namespace Template.RestAPI.Controllers
 { 
